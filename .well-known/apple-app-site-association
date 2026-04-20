@@ -3,24 +3,25 @@
     "details": [
       {
         "appIDs": [
-          "ABCDE12345.com.example.deeplink_demo_app",
+          "ABCDE12345.com.example.deeplink_demo_app"
         ],
         "components": [
-
           {
             "/": "/items/*",
             "comment": "Matches any URL with a path that starts with /items/."
           },
           {
-            "/": "/itemDetails/*",
+            "/": "/itemDetails",
             "?": { "id": "*" },
-            "comment": "Matches any URL with a path that starts with /itemDetails/ and has a query item with name 'id' and any value."
+            "comment": "Matches /itemDetails?id=..."
           }
         ]
-       }
-     ]
-   },
-   "webcredentials": {
-      "apps": [ "ABCDE12345.com.example.deeplink_demo_app" ]
-   }
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "ABCDE12345.com.example.deeplink_demo_app"
+    ]
+  }
 }
