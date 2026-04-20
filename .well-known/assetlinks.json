@@ -1,26 +1,27 @@
-[
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.f1soft.fonepay.merchant",
-      "sha256_cert_fingerprints": [
- "CF:71:39:70:0B:26:E5:5F:9A:5F:C4:E1:5E:F7:06:81:A4:40:7D:9A:41:FE:03:B1:62:05:C7:80:9A:76:1C:3A","0D:52:35:DC:19:3B:90:E8:D6:75:74:AB:C0:C7:5C:93:C0:14:0B:60:9E:B9:C5:A0:77:F3:B0:2E:B9:D1:47:AA"
-      ]
-    }
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "YOUR_TEAM_ID.com.f1soft.fonepay.merchant.stage"
+        ],
+        "components": [
+          {
+            "/": "/items/*",
+            "comment": "Matches any URL with a path that starts with /items/."
+          },
+          {
+            "/": "/itemDetails",
+            "?": { "id": "*" },
+            "comment": "Matches /itemDetails?id=..."
+          }
+        ]
+      }
+    ]
   },
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.f1soft.fonepay.merchant.stage",
-      "sha256_cert_fingerprints": [
-        "CF:71:39:70:0B:26:E5:5F:9A:5F:C4:E1:5E:F7:06:81:A4:40:7D:9A:41:FE:03:B1:62:05:C7:80:9A:76:1C:3A","0D:52:35:DC:19:3B:90:E8:D6:75:74:AB:C0:C7:5C:93:C0:14:0B:60:9E:B9:C5:A0:77:F3:B0:2E:B9:D1:47:AA"
-      ]
-    }
+  "webcredentials": {
+    "apps": [
+      "YOUR_TEAM_ID.com.f1soft.fonepay.merchant.stage"
+    ]
   }
-]
+}
