@@ -1,27 +1,20 @@
-{
-  "applinks": {
-    "details": [
-      {
-        "appIDs": [
-          "5JQ36Q72VU.com.example.deeplink_demo_app"
-        ],
-        "components": [
-          {
-            "/": "/items/*",
-            "comment": "Matches any URL with a path that starts with /items/."
-          },
-          {
-            "/": "/itemDetails",
-            "?": { "id": "*" },
-            "comment": "Matches /itemDetails?id=..."
-          }
-        ]
-      }
-    ]
-  },
-  "webcredentials": {
-    "apps": [
-      "5JQ36Q72VU.com.example.deeplink_demo_app"
-    ]
+  {                                                                          
+    "applinks": {                                                                                                                                                                                                                   
+      "details": [                                                                                                                                                                                                                  
+        {                                                                                                                                                                                                                                     "appIDs": [                                                                                                                                                                                                                           "5JQ36Q72VU.com.f1soft.fonepay.merchant.stage"                                                                                                                                                                          
+          ],
+          "components": [
+            {
+              "/": "/*",
+              "comment": "Matches all paths on this domain"                                                                                                                                                                         
+            }
+          ]
+        }
+      ]
+    },
+    "webcredentials": {
+      "apps": [
+        "5JQ36Q72VU.com.f1soft.fonepay.merchant.stage"                                                                                                                                                                              
+      ]
+    }
   }
-}
