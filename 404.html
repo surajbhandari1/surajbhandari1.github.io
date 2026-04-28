@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Fonepay Business...</title>
+    <meta name="apple-itunes-app" content="app-id=1527375253">
+    
+    <script type="text/javascript">
+        (function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var androidPackage = "com.fonepay.merchants";
+            var iosAppId = "1527375253";
+            var playStoreUrl = "https://play.google.com/store/apps/details?id=" + androidPackage;
+            var appStoreUrl = "https://apps.apple.com/app/id" + iosAppId;
+
+            // Capture the current path to pass to the app
+            var currentPath = window.location.pathname + window.location.search;
+
+            if (/android/i.test(userAgent)) {
+                // Tries to open the specific path in the app, falls back to Play Store
+                window.location.href = "intent://" + window.location.hostname + currentPath + "#Intent;scheme=https;package=" + androidPackage + ";S.browser_fallback_url=" + encodeURIComponent(playStoreUrl) + ";end";
+            } 
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                var start = Date.now();
+                setTimeout(function() {
+                    if (Date.now() - start < 2500) {
+                        window.location.href = appStoreUrl;
+                    }
+                }, 2000);
+            } else {
+                // For desktop, just go to the Play Store page or a general landing page
+                window.location.href = playStoreUrl;
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p style="text-align: center; padding-top: 50px; font-family: sans-serif;">Redirecting to Fonepay Business...</p>
+</body>
+</html>
