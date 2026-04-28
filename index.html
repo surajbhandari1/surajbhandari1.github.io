@@ -4,47 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fonepay Business</title>
-    <meta name="apple-itunes-app" content="app-id=1527375253">
+    <meta name="apple-itunes-app" content="app-id=1465584249">
     
     <script type="text/javascript">
         (function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            // Fonepay Business IDs
-            var androidPackage = "com.fonepay.merchants";
-            var iosAppId = "1527375253"; 
+            // Verified Production IDs
+            var androidPackage = "com.f1soft.fonepay.merchant";
+            var iosAppId = "1465584249"; 
             var playStoreUrl = "https://play.google.com/store/apps/details?id=" + androidPackage;
             var appStoreUrl = "https://apps.apple.com/app/id" + iosAppId;
 
-            // Redirection Logic
             if (/android/i.test(userAgent)) {
-                // Intent triggers the app if installed, or redirects to Play Store via fallback URL
+                // Intent syntax: tries to open the app, falls back to the Store if not found
                 window.location.href = "intent://#Intent;scheme=https;package=" + androidPackage + ";S.browser_fallback_url=" + encodeURIComponent(playStoreUrl) + ";end";
             } 
             else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // iOS logic: Wait to see if the app opens, otherwise go to App Store
+                // iOS fallback logic
                 var start = Date.now();
                 setTimeout(function() {
                     if (Date.now() - start < 2500) {
                         window.location.href = appStoreUrl;
                     }
                 }, 2000);
+            } else {
+                // Desktop redirect
+                window.location.href = playStoreUrl;
             }
         })();
     </script>
     <style>
-        body { font-family: -apple-system, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #f8f9fa; color: #333; text-align: center; }
+        body { font-family: -apple-system, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #ffffff; color: #333; text-align: center; }
         .container { padding: 20px; }
-        .loader { border: 3px solid #f3f3f3; border-top: 3px solid #e11f26; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        .loader { border: 3px solid #f3f3f3; border-top: 3px solid #ed1c24; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        a { color: #e11f26; text-decoration: none; font-weight: bold; }
+        a { color: #ed1c24; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="loader"></div>
         <h2>Opening Fonepay Business...</h2>
-        <p>If the app doesn't open, <a href="https://play.google.com/store/apps/details?id=com.fonepay.merchants">click here to download</a>.</p>
+        <p>Not redirected? <a href="https://play.google.com/store/apps/details?id=com.f1soft.fonepay.merchant">Get the app here</a>.</p>
     </div>
 </body>
 </html>
